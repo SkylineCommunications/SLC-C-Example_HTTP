@@ -55,7 +55,7 @@ DATE		VERSION		AUTHOR				COMMENTS
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>SLC SDF HTTP</Name>
 	<Description>SLC SDF HTTP Example on HTTP Connection</Description>
-	<Version>1.0.0.1</Version>
+	<Version>1.0.1.1</Version>
 	<IntegrationID>DMS-DRV-XXXX</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Communications</Vendor>
@@ -349,13 +349,64 @@ DATE		VERSION		AUTHOR				COMMENTS
 	</QActions>
 
 	<HTTP>
-		<Session name="getData" id="1">
+		<Session name="getData" id="1" ignoreTimeout="404,500">
 			<Connection id="1">
-				<Request verb="GET" url="ProtocolSimulations/SLC SDF/HTTP/1.0.0.1/data.xml">
+				<Request verb="GET" url="ProtocolSimulations/SLC SDF/HTTP/1.0.1.1/NoExistdata.xml">
 					<Headers>
-						<Header key="Accept">image/gif, image/jpeg, image/pjpeg, application/x-ms-application,
-							application/xaml+xml, application/x-ms-xbap, */*</Header>
+						<Header key="Accept">
+							image/gif, image/jpeg, image/pjpeg, application/x-ms-application,
+							application/xaml+xml, application/x-ms-xbap, */*
+						</Header>
 					</Headers>
+
+				</Request>
+				<Response statusCode="10">
+					<Content pid="20"></Content>
+				</Response>
+			</Connection>
+		</Session>
+		
+		<Session name="getData2" id="2">
+			<Connection id="1" ignoreTimeout="404,5xx">
+				<Request verb="GET" url="ProtocolSimulations/SLC SDF/HTTP/1.0.1.1/NoExistdata2.xml">
+					<Headers>
+						<Header key="Accept">
+							image/gif, image/jpeg, image/pjpeg, application/x-ms-application,
+							application/xaml+xml, application/x-ms-xbap, */*
+						</Header>
+					</Headers>
+
+				</Request>
+				<Response statusCode="10">
+					<Content pid="20"></Content>
+				</Response>
+			</Connection>
+			<Connection id="2" ignoreTimeout="true">
+				<Request verb="GET" url="ProtocolSimulations/SLC SDF/HTTP/1.0.1.1/NoExistdata3.xml">
+					<Headers>
+						<Header key="Accept">
+							image/gif, image/jpeg, image/pjpeg, application/x-ms-application,
+							application/xaml+xml, application/x-ms-xbap, */*
+						</Header>
+					</Headers>
+
+				</Request>
+				<Response statusCode="10">
+					<Content pid="20"></Content>
+				</Response>
+			</Connection>
+		</Session>
+		
+		<Session name="getData3" id="3" ignoreTimeout="false">
+			<Connection id="1">
+				<Request verb="GET" url="ProtocolSimulations/SLC SDF/HTTP/1.0.1.1/NoExistdata3.xml">
+					<Headers>
+						<Header key="Accept">
+							image/gif, image/jpeg, image/pjpeg, application/x-ms-application,
+							application/xaml+xml, application/x-ms-xbap, */*
+						</Header>
+					</Headers>
+
 				</Request>
 				<Response statusCode="10">
 					<Content pid="20"></Content>
@@ -372,6 +423,13 @@ DATE		VERSION		AUTHOR				COMMENTS
 				<Session>1</Session>
 			</Content>
 		</Group>
+		<Group id="2">
+			<Name>getXMLFile2</Name>
+			<Description>Get XMLFile2</Description>
+			<Content>
+				<Session>2</Session>
+			</Content>
+		</Group>
 	</Groups>
 	<Timers>
 		<Timer id="1">
@@ -380,6 +438,7 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Interval>75</Interval>
 			<Content>
 				<Group>1</Group>
+				<Group>2</Group>
 			</Content>
 		</Timer>
 	</Timers>
@@ -416,6 +475,31 @@ DATE		VERSION		AUTHOR				COMMENTS
 										</Provider>
 										<Changes>
 											<NewFeature>Example</NewFeature>
+										</Changes>
+										<References>
+											<TaskId>111913</TaskId>
+										</References>
+									</MinorVersion>
+								</MinorVersions>
+							</MajorVersion>
+							<MajorVersion id="1">
+								<Changes>
+									<Change>
+										<Impact>Added NF to Ignore Timeouts on HTTP</Impact>
+										<ActionsToTake>
+											<ActionToTake />
+										</ActionsToTake>
+									</Change>
+								</Changes>
+								<MinorVersions>
+									<MinorVersion id="1" basedOn="1.0.0.1">
+										<Date>2021-11-04</Date>
+										<Provider>
+											<Author>JST</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<Change>Example new Feature to ignore Timeouts</Change>
 										</Changes>
 										<References>
 											<TaskId>111913</TaskId>
