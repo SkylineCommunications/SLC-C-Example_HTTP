@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+****************************************************************************
+*  Copyright (c) 2018,  Skyline Communications NV  All Rights Reserved.    *
+****************************************************************************
+
+By using this driver, you expressly agree with the usage terms and
+conditions set out below.
+This driver and all related materials are protected by copyrights and
+other intellectual property rights that exclusively belong
+to Skyline Communications.
+
+A user license granted for this driver is strictly for personal use only.
+This driver may not be used in any way by anyone without the prior
+written consent of Skyline Communications. Any sublicensing of this
+driver is forbidden.
+
+Any modifications to this driver by the user are only allowed for
+personal use and within the intended purpose of the driver,
+and will remain the sole responsibility of the user.
+Skyline Communications will not be responsible for any damages or
+malfunctions whatsoever of the driver resulting from a modification
+or adaptation by the user.
+
+The content of this driver is confidential information.
+The user hereby agrees to keep this confidential information strictly
+secret and confidential and not to disclose or reveal it, in whole
+or in part, directly or indirectly to any person, entity, organization
+or administration without the prior written consent of
+Skyline Communications.
+
+Any inquiries can be addressed to:
+
+	Skyline Communications NV
+	Ambachtenstraat 33
+	B-8870 Izegem
+	Belgium
+	Tel.	: +32 51 31 35 69
+	Fax.	: +32 51 31 01 29
+	E-mail	: info@skyline.be 
+	Web		: www.skyline.be
+	Contact	: Ben Vandenberghe
+
+****************************************************************************
+Revision History:
+
+DATE		VERSION		AUTHOR				COMMENTS
+
+22/08/2018	1.0.0.1		RPA & SUL, Skyline	Initial Version
+
+****************************************************************************
+
+-->
+<Protocol xmlns="http://www.skyline.be/protocol">
+	<Name>SLC SDF HTTP</Name>
+	<Description>SLC SDF HTTP Example on HTTP Connection</Description>
+	<Version>1.0.0.1</Version>
+	<IntegrationID>DMS-DRV-XXXX</IntegrationID>
+	<Provider>Skyline Communications</Provider>
+	<Vendor>Skyline Communications</Vendor>
+	<VendorOID>1.3.6.1.4.1.8813.2.48</VendorOID>
+	<DeviceOID>999</DeviceOID>
+	<ElementType>Training Example</ElementType>
+	<Type relativeTimers="true">http</Type>
+	<Display defaultPage="Alarms" pageOrder="Alarms" wideColumnPages="Alarms" />
+	<SNMP includepages="true">auto</SNMP>
+	<Params>
+		<Param id="10" trending="false">
+			<Name>statusCode</Name>
+			<Description>HTTP Status Code</Description>
+			<Information>
+				<Subtext>Displays the status code of the HTTP request.</Subtext>
+				<Includes>
+					<Include>range</Include>
+					<Include>steps</Include>
+					<Include>time</Include>
+					<Include>units</Include>
+				</Includes>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Row>0</Row>
+						<Column>0</Column>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="20" trending="false">
+			<Name>xmlResponseContent</Name>
+			<Description>XML Response Content</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+		</Param>
+		<Param id="100" trending="false">
+			<Name>alarms</Name>
+			<Description>Alarms</Description>
+			<Type>array</Type>
+			<ArrayOptions index="0" options=";naming=/104,102">
+				<ColumnOption idx="0" pid="101" type="retrieved" options="" />
+				<ColumnOption idx="1" pid="102" type="retrieved" options="" />
+				<ColumnOption idx="2" pid="103" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="104" type="retrieved" options="" />
+				<ColumnOption idx="4" pid="105" type="retrieved" options="" />
+				<ColumnOption idx="5" pid="106" type="displaykey" options="" />
+			</ArrayOptions>
+			<Information>
+				<Subtext>Alarm list</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>double</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Alarms</Page>
+						<Row>1</Row>
+						<Column>0</Column>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="tab=columns:101|0-106|5-103|2-105|4-102|1-104|3,width:44-350-68-68-230-150,sort:STRING-STRING-STRING-STRING-STRING-STRING,lines:25,filter:true">table</Type>
+			</Measurement>
+		</Param>
+		<Param id="101" trending="false">
+			<Name>alarmsId</Name>
+			<Description>Id (Alarms)</Description>
+			<Information>
+				<Subtext>The Id of the Alarm</Subtext>
+				<Includes>
+					<Include>time</Include>
+					<Include>range</Include>
+					<Include>steps</Include>
+					<Include>units</Include>
+				</Includes>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="102" trending="false">
+			<Name>alarmsDisplayName</Name>
+			<Description>Name (Alarms)</Description>
+			<Information>
+				<Subtext>The Name of the Alarm</Subtext>
+				<Includes>
+					<Include>time</Include>
+					<Include>range</Include>
+					<Include>steps</Include>
+					<Include>units</Include>
+				</Includes>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="103" trending="true">
+			<Name>alarmsType</Name>
+			<Description>Type (Alarms)</Description>
+			<Information>
+				<Subtext>The Type of the Alarm</Subtext>
+				<Includes>
+					<Include>time</Include>
+					<Include>range</Include>
+					<Include>steps</Include>
+					<Include>units</Include>
+				</Includes>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<!-- SuppressValidator 2.5.1 No defaults -->
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
+			<!-- /SuppressValidator 2.5.1 -->
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Internal</Display>
+						<Value>internal</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Input</Display>
+						<Value>input</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Output</Display>
+						<Value>output</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="104" trending="false">
+			<Name>alarmsSource</Name>
+			<Description>Source (Alarms)</Description>
+			<Information>
+				<Subtext>The Source of the Alarm</Subtext>
+				<Includes>
+					<Include>time</Include>
+					<Include>range</Include>
+					<Include>steps</Include>
+					<Include>units</Include>
+				</Includes>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="105" trending="true">
+			<Name>alarmsSeverity</Name>
+			<Description>Severity (Alarms)</Description>
+			<Information>
+				<Subtext>The Source of the Alarm</Subtext>
+				<Includes>
+					<Include>time</Include>
+					<Include>range</Include>
+					<Include>steps</Include>
+					<Include>units</Include>
+				</Includes>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<CH>critical</CH>
+				<MaH>major</MaH>
+				<MiH>minor</MiH>
+				<WaH>warning</WaH>
+				<Normal>normal</Normal>
+			</Alarm>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Critical</Display>
+						<Value>critical</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Major</Display>
+						<Value>major</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Minor</Display>
+						<Value>minor</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Warning</Display>
+						<Value>warning</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Normal</Display>
+						<Value>normal</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="106" trending="false">
+			<Name>alarmsDisplayKey</Name>
+			<Description>Display Key [IDX] (Alarms)</Description>
+			<Information>
+				<Subtext>The Source and Alarm Name</Subtext>
+				<Includes>
+					<Include>time</Include>
+					<Include>range</Include>
+					<Include>steps</Include>
+					<Include>units</Include>
+				</Includes>
+			</Information>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+	</Params>
+
+	<QActions>
+		<QAction id="1" name="parseXML" encoding="csharp" triggers="20">
+		</QAction>
+	</QActions>
+
+	<HTTP>
+		<Session name="getData" id="1">
+			<Connection id="1">
+				<Request verb="GET" url="ProtocolSimulations/SLC SDF/HTTP/1.0.0.1/data.xml">
+					<Headers>
+						<Header key="Accept">image/gif, image/jpeg, image/pjpeg, application/x-ms-application,
+							application/xaml+xml, application/x-ms-xbap, */*</Header>
+					</Headers>
+				</Request>
+				<Response statusCode="10">
+					<Content pid="20"></Content>
+				</Response>
+			</Connection>
+		</Session>
+	</HTTP>
+
+	<Groups>
+		<Group id="1">
+			<Name>getXMLFile</Name>
+			<Description>Get XMLFile</Description>
+			<Content>
+				<Session>1</Session>
+			</Content>
+		</Group>
+	</Groups>
+	<Timers>
+		<Timer id="1">
+			<Name>10s - Fast Timer</Name>
+			<Time initial="true">10000</Time>
+			<Interval>75</Interval>
+			<Content>
+				<Group>1</Group>
+			</Content>
+		</Timer>
+	</Timers>
+	<PortSettings name="HTTP Connection">
+		<BusAddress>
+			<DefaultValue>ByPassProxy</DefaultValue>
+			<Disabled>false</Disabled>
+		</BusAddress>
+		<IPport>
+			<DefaultValue>80</DefaultValue>
+			<Disabled>false</Disabled>
+		</IPport>
+		<PortTypeUDP>
+			<Disabled>true</Disabled>
+		</PortTypeUDP>
+		<PortTypeSerial>
+			<Disabled>true</Disabled>
+		</PortTypeSerial>
+	</PortSettings>
+	<VersionHistory>
+		<Branches>
+			<Branch id="1">
+				<Comment />
+				<SystemVersions>
+					<SystemVersion id="0">
+						<MajorVersions>
+							<MajorVersion id="0">
+								<MinorVersions>
+									<MinorVersion id="1">
+										<Date>2021-11-04</Date>
+										<Provider>
+											<Author>JST</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<NewFeature>Example</NewFeature>
+										</Changes>
+										<References>
+											<TaskId>111913</TaskId>
+										</References>
+									</MinorVersion>
+								</MinorVersions>
+							</MajorVersion>
+						</MajorVersions>
+					</SystemVersion>
+				</SystemVersions>
+			</Branch>
+		</Branches>
+	</VersionHistory>
+	<Compliancies>
+		<CassandraReady>true</CassandraReady>
+	</Compliancies>
+</Protocol>
