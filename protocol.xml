@@ -61,7 +61,7 @@ DATE		VERSION		AUTHOR				COMMENTS
 	<VendorOID>1.3.6.1.4.1.8813.2.48</VendorOID>
 	<DeviceOID>999</DeviceOID>
 	<ElementType>Training Example</ElementType>
-	<Type relativeTimers="true" options="">http</Type>
+	<Type relativeTimers="true">http</Type>
 	<Display defaultPage="General" pageOrder="General;Devices" wideColumnPages="Devices" />
 	<SNMP includepages="true">auto</SNMP>
 
@@ -215,12 +215,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The name of the displayed element. The name should be unique for easy identification.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -247,12 +241,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The name of the host server.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -280,12 +268,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The server's main IP Address.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -312,12 +294,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The server's backup IP Address.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -344,12 +320,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The network interface's unique hardware address. Used in physical-layer communication.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -377,12 +347,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Unique ID for the server when accessing from a console connection.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -409,12 +373,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The server's version.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -441,12 +399,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The version for the current layout.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -473,12 +425,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The current version revision for the Boot Loader.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -505,12 +451,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The current unique identifier for this server.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -538,12 +478,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>The name of the company associated with this server.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -570,12 +504,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Web page for the company.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -602,12 +530,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>In case of issues, you can use this e-mail to contact the company responsible for this server to obtain support.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -634,12 +556,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>In case of issues, you can contact this number to get support for this server.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -667,12 +583,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Current Buzzer value.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -708,12 +618,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Current Temperature of the server.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -780,12 +684,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Device Identification.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -805,12 +703,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Device Name.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -830,12 +722,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Device Type.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -855,12 +741,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Status of the Device (Available/Not Available).</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -895,12 +775,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Device Index.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -961,12 +835,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Field identification.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -986,12 +854,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Field Key.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -1011,12 +873,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Field Current (A).</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -1045,12 +901,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Field Name.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -1070,12 +920,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Field Minimum Current (A).</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -1104,12 +948,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Field Maximum Current (A).</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -1138,12 +976,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>read</Type>
 			<Information>
 				<Subtext>Field Type.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -1171,12 +1003,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Description>Display Key [IDX] (Fields)</Description>
 			<Information>
 				<Subtext>Display Key containing the Device Name and Field Name.</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
