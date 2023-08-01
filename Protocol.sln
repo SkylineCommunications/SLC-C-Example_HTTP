@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QActions", "QActions", "{17
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{A877146F-AA89-4F3D-9C6D-D7EC8226EFF8}"
 	ProjectSection(SolutionItems) = preProject
-		Dlls\readme.txt = Dlls\readme.txt
+		Dlls\ABOUT.md = Dlls\ABOUT.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{36F0C76D-CE00-4164-AD16-53CD197E7E08}"
