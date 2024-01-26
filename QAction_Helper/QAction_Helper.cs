@@ -13,11 +13,21 @@ public static class Parameter
 	public const int receivedataxmlhttpcode_10 = 10;
 	/// <summary>PID: 10 | Type: read</summary>
 	public const int receivedataxmlhttpcode = 10;
+	/// <summary>PID: 11 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int receivewikipediaquerystatusline_11 = 11;
+	/// <summary>PID: 11 | Type: read</summary>
+	public const int receivewikipediaquerystatusline = 11;
 	/// <summary>PID: 20 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int receivedataxmlhttpanswer_20 = 20;
 	/// <summary>PID: 20 | Type: read</summary>
 	public const int receivedataxmlhttpanswer = 20;
+	/// <summary>PID: 21 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int receivewikipediaqueryanswer_21 = 21;
+	/// <summary>PID: 21 | Type: read</summary>
+	public const int receivewikipediaqueryanswer = 21;
 	/// <summary>PID: 50 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int elementname_50_50 = 50;
@@ -98,8 +108,28 @@ public static class Parameter
 	public const int servertemperatureunit_65 = 65;
 	/// <summary>PID: 65 | Type: read</summary>
 	public const int servertemperatureunit = 65;
+	/// <summary>PID: 1200 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int query_1200 = 1200;
+	/// <summary>PID: 1200 | Type: read</summary>
+	public const int query = 1200;
+	/// <summary>PID: 1204 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int searchquery_1204 = 1204;
+	/// <summary>PID: 1204 | Type: read</summary>
+	public const int searchquery = 1204;
 	public class Write
 	{
+		/// <summary>PID: 1201 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int query_1201 = 1201;
+		/// <summary>PID: 1201 | Type: write</summary>
+		public const int query = 1201;
+		/// <summary>PID: 1202 | Type: write</summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public const int name_1202 = 1202;
+		/// <summary>PID: 1202 | Type: write</summary>
+		public const int name = 1202;
 	}
 	public class Devices
 	{
@@ -270,6 +300,10 @@ public static class Parameter
 }
 public class WriteParameters
 {
+	/// <summary>PID: 1201  | Type: write</summary>
+	public System.Object Query {get { return Protocol.GetParameter(1201); }set { Protocol.SetParameter(1201, value); }}
+	/// <summary>PID: 1202  | Type: write | DISCREETS: Send = 1</summary>
+	public System.Object Name {get { return Protocol.GetParameter(1202); }set { Protocol.SetParameter(1202, value); }}
 	public SLProtocolExt Protocol;
 	public WriteParameters(SLProtocolExt protocol)
 	{
@@ -290,8 +324,12 @@ public interface SLProtocolExt : SLProtocol
 	object Title_end_company_information__fixed { get; set; }
 	object Receivedataxmlhttpcode_10 { get; set; }
 	object Receivedataxmlhttpcode { get; set; }
+	object Receivewikipediaquerystatusline_11 { get; set; }
+	object Receivewikipediaquerystatusline { get; set; }
 	object Receivedataxmlhttpanswer_20 { get; set; }
 	object Receivedataxmlhttpanswer { get; set; }
+	object Receivewikipediaqueryanswer_21 { get; set; }
+	object Receivewikipediaqueryanswer { get; set; }
 	object Elementname_50_50 { get; set; }
 	object Elementname_50 { get; set; }
 	object Hostname_51 { get; set; }
@@ -350,6 +388,13 @@ public interface SLProtocolExt : SLProtocol
 	object Fieldstype { get; set; }
 	object Fieldsdisplaykey_1108 { get; set; }
 	object Fieldsdisplaykey { get; set; }
+	object Query_1200 { get; set; }
+	object Query { get; set; }
+	object Query_1201 { get; set; }
+	object Name_1202 { get; set; }
+	object Name { get; set; }
+	object Searchquery_1204 { get; set; }
+	object Searchquery { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
@@ -375,11 +420,21 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Receivedataxmlhttpcode_10 {get { return GetParameter(10); }set { SetParameter(10, value); }}
 	/// <summary>PID: 10  | Type: read</summary>
 	public System.Object Receivedataxmlhttpcode {get { return GetParameter(10); }set { SetParameter(10, value); }}
+	/// <summary>PID: 11  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Receivewikipediaquerystatusline_11 {get { return GetParameter(11); }set { SetParameter(11, value); }}
+	/// <summary>PID: 11  | Type: read</summary>
+	public System.Object Receivewikipediaquerystatusline {get { return GetParameter(11); }set { SetParameter(11, value); }}
 	/// <summary>PID: 20  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Receivedataxmlhttpanswer_20 {get { return GetParameter(20); }set { SetParameter(20, value); }}
 	/// <summary>PID: 20  | Type: read</summary>
 	public System.Object Receivedataxmlhttpanswer {get { return GetParameter(20); }set { SetParameter(20, value); }}
+	/// <summary>PID: 21  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Receivewikipediaqueryanswer_21 {get { return GetParameter(21); }set { SetParameter(21, value); }}
+	/// <summary>PID: 21  | Type: read</summary>
+	public System.Object Receivewikipediaqueryanswer {get { return GetParameter(21); }set { SetParameter(21, value); }}
 	/// <summary>PID: 50  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Elementname_50_50 {get { return GetParameter(50); }set { SetParameter(50, value); }}
@@ -525,6 +580,23 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Fieldsdisplaykey_1108 {get { return GetParameter(1108); }set { SetParameter(1108, value); }}
 	/// <summary>PID: 1108  | Type: read</summary>
 	public System.Object Fieldsdisplaykey {get { return GetParameter(1108); }set { SetParameter(1108, value); }}
+	/// <summary>PID: 1200  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Query_1200 {get { return GetParameter(1200); }set { SetParameter(1200, value); }}
+	/// <summary>PID: 1200  | Type: read</summary>
+	public System.Object Query {get { return GetParameter(1200); }set { SetParameter(1200, value); }}
+	/// <summary>PID: 1201  | Type: write</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Query_1201 {get { return GetParameter(1201); }set { SetParameter(1201, value); }}
+	/// <summary>PID: 1202  | Type: write | DISCREETS: Send = 1</summary>
+	public System.Object Name_1202 {get { return GetParameter(1202); }set { SetParameter(1202, value); }}
+	/// <summary>PID: 1202  | Type: write | DISCREETS: Send = 1</summary>
+	public System.Object Name {get { return Write.Name; }set { Write.Name = value; }}
+	/// <summary>PID: 1204  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Searchquery_1204 {get { return GetParameter(1204); }set { SetParameter(1204, value); }}
+	/// <summary>PID: 1204  | Type: read</summary>
+	public System.Object Searchquery {get { return GetParameter(1204); }set { SetParameter(1204, value); }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{

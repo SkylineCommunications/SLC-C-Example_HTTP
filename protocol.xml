@@ -54,7 +54,7 @@ DATE		VERSION		AUTHOR				COMMENTS
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>SLC SDF HTTP</Name>
 	<Description>SLC SDF HTTP Exercise on HTTP Devices</Description>
-	<Version>2.0.0.1</Version>
+	<Version>2.0.0.2</Version>
 	<IntegrationID>DMS-DRV-XXXX</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline Communications</Vendor>
@@ -62,7 +62,7 @@ DATE		VERSION		AUTHOR				COMMENTS
 	<DeviceOID>999</DeviceOID>
 	<ElementType>Training Example</ElementType>
 	<Type relativeTimers="true">http</Type>
-	<Display defaultPage="General" pageOrder="General;Devices" wideColumnPages="Devices" />
+	<Display defaultPage="General" pageOrder="General;Devices;Data Encoding" wideColumnPages="Devices" />
 	<SNMP includepages="true">auto</SNMP>
 
 	<Params>
@@ -192,6 +192,22 @@ DATE		VERSION		AUTHOR				COMMENTS
 				<Type>string</Type>
 			</Measurement>
 		</Param>
+		<Param id="11">
+			<Name>receiveWikipediaQueryStatusLine</Name>
+			<Description>Receive Wikipedia Query Status Line</Description>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
 		<Param id="20">
 			<Name>receiveDataXmlHttpAnswer</Name>
 			<Description>Receive Data XML HTTP Answer</Description>
@@ -206,6 +222,32 @@ DATE		VERSION		AUTHOR				COMMENTS
 			</Display>
 			<Measurement>
 				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="21">
+			<Name>receiveWikipediaQueryAnswer</Name>
+			<Description>Receive Wikipedia Query Answer</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>The response for the performed query.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<LengthType>next param</LengthType>
+				<Type>string</Type>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Data Encoding</Page>
+						<Column>1</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type lines="20">string</Type>
 			</Measurement>
 		</Param>
 		<!--Server names-->
@@ -1017,12 +1059,128 @@ DATE		VERSION		AUTHOR				COMMENTS
 				<Type>string</Type>
 			</Measurement>
 		</Param>
+		<Param id="1200" trending="false" save="true">
+			<Name>query</Name>
+			<Description>Query</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>The Wikipedia search text.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>&amp;</DefaultValue>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Data Encoding</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1201" setter="true">
+			<Name>query</Name>
+			<Description>Query</Description>
+			<Type>write</Type>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Data Encoding</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1202">
+			<Name>name</Name>
+			<Type>write</Type>
+			<Information>
+				<Subtext>Performs a query on Wikipedia.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>Data Encoding</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type width="110">button</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Send</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<Param id="1204" trending="false">
+			<Name>searchQuery</Name>
+			<Description>Search Query</Description>
+			<Type>read</Type>
+			<Information>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>false</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
 	</Params>
-
+	<Triggers>
+		<Trigger id="2">
+			<Name>sendQueryTrigger</Name>
+			<Type>action</Type>
+			<Content>
+				<Id>2</Id>
+			</Content>
+		</Trigger>
+	</Triggers>
+	<Actions>
+		<Action id="2">
+			<Name>executeQuery</Name>
+			<On id="2">group</On>
+			<Type>execute next</Type>
+		</Action>
+	</Actions>
 	<QActions>
 		<QAction id="1" name="commonMethods" encoding="csharp" options="precompile">
 		</QAction>
 		<QAction id="2" name="parseData" encoding="csharp" triggers="20">
+		</QAction>
+		<QAction id="1202" name="encodeData" encoding="csharp" triggers="1202">
 		</QAction>
 	</QActions>
 	<Groups>
@@ -1032,6 +1190,14 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Type>poll</Type>
 			<Content>
 				<Session>1</Session>
+			</Content>
+		</Group>
+		<Group id="2">
+			<Name>executeQeury</Name>
+			<Description>Execute Query</Description>
+			<Type>poll</Type>
+			<Content>
+				<Session>2</Session>
 			</Content>
 		</Group>
 	</Groups>
@@ -1045,6 +1211,21 @@ DATE		VERSION		AUTHOR				COMMENTS
 				</Request>
 				<Response statusCode="10">
 					<Content pid="20"></Content>
+				</Response>
+			</Connection>
+		</Session>
+		<Session id="2" name="sendQuery">
+			<Connection id="1" name="Get Data XML">
+				<Request verb="GET" url="https://en.wikipedia.org?">
+					<Headers>
+						<Header key="Accept">text/xml;charset=UTF-8</Header>
+					</Headers>
+					<Parameters>
+						<Parameter key="search" pid="1204" />
+					</Parameters>
+				</Request>
+				<Response statusCode="11">
+					<Content pid="21"></Content>
 				</Response>
 			</Connection>
 		</Session>
@@ -1098,6 +1279,19 @@ DATE		VERSION		AUTHOR				COMMENTS
 										</Changes>
 										<References>
 											<TaskId>215164</TaskId>
+										</References>
+									</MinorVersion>
+									<MinorVersion id="2" basedOn="2.0.0.1">
+										<Date>2024-01-26</Date>
+										<Provider>
+											<Author>PDB</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<NewFeature>Added data encoding example</NewFeature>
+										</Changes>
+										<References>
+											<TaskId>224318</TaskId>
 										</References>
 									</MinorVersion>
 								</MinorVersions>

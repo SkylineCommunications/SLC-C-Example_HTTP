@@ -23,12 +23,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{B6C37C17-6EA6-47A2-822D-29A8B3E7C046}"
+	ProjectSection(SolutionItems) = preProject
+		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
+		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAction_Helper", "QAction_Helper\QAction_Helper.csproj", "{BA99822E-FCC5-4549-AAC5-907C0C0A00CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAction_1", "QAction_1\QAction_1.csproj", "{B1596056-C298-4AD2-B359-FADD09CC5A44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAction_2", "QAction_2\QAction_2.csproj", "{D8597A96-C2C1-42BC-83BC-0608AA1D747E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAction_1202", "QAction_1202\QAction_1202.csproj", "{D6F5F3D7-8C69-44D7-AB16-F0DC6AB57195}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +54,10 @@ Global
 		{D8597A96-C2C1-42BC-83BC-0608AA1D747E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8597A96-C2C1-42BC-83BC-0608AA1D747E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8597A96-C2C1-42BC-83BC-0608AA1D747E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F5F3D7-8C69-44D7-AB16-F0DC6AB57195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F5F3D7-8C69-44D7-AB16-F0DC6AB57195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F5F3D7-8C69-44D7-AB16-F0DC6AB57195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F5F3D7-8C69-44D7-AB16-F0DC6AB57195}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +67,7 @@ Global
 		{BA99822E-FCC5-4549-AAC5-907C0C0A00CE} = {132D37C5-C878-4217-ABEC-40D2037DF0E7}
 		{B1596056-C298-4AD2-B359-FADD09CC5A44} = {17DF179B-422F-4F4B-AD19-1820937EB0C1}
 		{D8597A96-C2C1-42BC-83BC-0608AA1D747E} = {17DF179B-422F-4F4B-AD19-1820937EB0C1}
+		{D6F5F3D7-8C69-44D7-AB16-F0DC6AB57195} = {17DF179B-422F-4F4B-AD19-1820937EB0C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {654CD4BC-C483-4FE2-B164-72D1F5A155AF}
