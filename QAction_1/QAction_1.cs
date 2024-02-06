@@ -72,7 +72,8 @@ public class QAction
 			foreach (XElement alarm in xmlData.Descendants("alarm"))
 			{
 				string alarmId = alarm.GetElementOrDefault("alarmId").GetAttributeOrNull("id");
-				if (string.IsNullOrWhiteSpace(alarmId)) continue;
+				if (string.IsNullOrWhiteSpace(alarmId))
+					continue;
 
 				if (!polledAlarms.ContainsKey(alarmId))
 				{
@@ -82,7 +83,7 @@ public class QAction
 						Alarmsdisplayname_102 = alarm.GetAttributeOrNull("displayName"),
 						Alarmstype_103 = alarm.GetElementOrDefault("alarmType").GetAttributeOrNull("value"),
 						Alarmssource_104 = alarm.GetElementOrDefault("sourceText").GetAttributeOrNull("value"),
-						Alarmsseverity_105 = alarm.GetElementOrDefault("severityLevel").GetAttributeOrNull("value")
+						Alarmsseverity_105 = alarm.GetElementOrDefault("severityLevel").GetAttributeOrNull("value"),
 					};
 					polledAlarms.Add(alarmId, alarmRow);
 				}
