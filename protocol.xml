@@ -63,7 +63,9 @@ DATE		VERSION		AUTHOR				COMMENTS
 	<DeviceOID>5</DeviceOID>
 	<ElementType>Example</ElementType>
 	<Type relativeTimers="true">http</Type>
+	<!-- SuppressValidator 1.21.5 The default page is for this example "Alarms" -->
 	<Display defaultPage="Alarms" pageOrder="Alarms" wideColumnPages="Alarms" />
+	<!-- /SuppressValidator 1.21.5 -->
 	<SNMP includepages="true">auto</SNMP>
 	<Params>
 		<Param id="10" trending="false">
@@ -71,12 +73,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Description>HTTP Status Code</Description>
 			<Information>
 				<Subtext>Displays the status code of the HTTP request.</Subtext>
-				<Includes>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>time</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -147,12 +143,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Description>Id (Alarms)</Description>
 			<Information>
 				<Subtext>The Id of the Alarm</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -172,12 +162,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Description>Name (Alarms)</Description>
 			<Information>
 				<Subtext>The Name of the Alarm</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -197,12 +181,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Description>Type (Alarms)</Description>
 			<Information>
 				<Subtext>The Type of the Alarm</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -241,12 +219,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Description>Source (Alarms)</Description>
 			<Information>
 				<Subtext>The Source of the Alarm</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -266,12 +238,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Description>Severity (Alarms)</Description>
 			<Information>
 				<Subtext>The Source of the Alarm</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
@@ -321,12 +287,6 @@ DATE		VERSION		AUTHOR				COMMENTS
 			<Description>Display Key [IDX] (Alarms)</Description>
 			<Information>
 				<Subtext>The Source and Alarm Name</Subtext>
-				<Includes>
-					<Include>time</Include>
-					<Include>range</Include>
-					<Include>steps</Include>
-					<Include>units</Include>
-				</Includes>
 			</Information>
 			<Type>read</Type>
 			<Interprete>
